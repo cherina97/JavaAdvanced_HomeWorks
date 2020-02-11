@@ -19,7 +19,7 @@ public class SalaryTest {
     }
 
     @Test(expected = DaysException.class)
-    public void itGetSalary() throws DaysException {
+    public void itGetsSalary() throws DaysException {
         int realSalary = salary.getSalary();
         int expectedSalary = 8090;
 
@@ -27,7 +27,7 @@ public class SalaryTest {
     }
 
     @Test
-    public void itAddsPremium() throws DaysException {
+    public void itAddsPremium(){
         int realSalary = salary.getPremium();
         int expectedSalary = 9090;
 
@@ -35,7 +35,7 @@ public class SalaryTest {
     }
 
     @Test
-    public void itGetSalaryWithAbsenteeism() throws DaysException {
+    public void itGetsSalaryWithAbsenteeism(){
         int realSalary = salary.isAbsenteeismExist();
         int expectedSalary = 0;
 

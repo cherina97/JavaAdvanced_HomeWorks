@@ -25,7 +25,7 @@ public class Salary {
         this.premium = premium;
     }
 
-    public int getSalary() throws DaysException {
+    public int getSalary(){
         if (workedDaysInMonth > 31 || workedDaysInMonth < 1) {
             throw new DaysException("You can`t work more than 31 days or less than 1 day.");
         }
@@ -38,7 +38,7 @@ public class Salary {
         return hospitalSalary;
     }
 
-    public int isAbsenteeismExist() throws DaysException {
+    public int isAbsenteeismExist(){
         int salary = 0;
         if (absenteeism == true) {
             int fine = 1000;
@@ -50,7 +50,7 @@ public class Salary {
         return salary;
     }
 
-    public int getPremium() throws DaysException {
+    public int getPremium() {
         int salary = 0;
         if (absenteeism == false && hospitalDays == 0) {
             salary = (getSalary()) + premium;
