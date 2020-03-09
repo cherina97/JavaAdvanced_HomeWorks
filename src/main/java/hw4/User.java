@@ -1,27 +1,9 @@
 package hw4;
 
-import hw3.Authors;
-
-import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class User{
-
-//    public static User of(ResultSet resultSet) {
-//        User user = new User();
-//        try {
-//            user.setId(resultSet.getInt("id"));
-//            user.setFirstName(resultSet.getString("first_name"));
-//            user.setLastName(resultSet.getString("last_name"));
-//            user.setEmail(resultSet.getString("email"));
-//            user.setPassword(resultSet.getString("password"));
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return user;
-//    }
+public class User {
 
     private int id;
     private String firstName;
@@ -29,7 +11,17 @@ public class User{
     private String email;
     private String password;
 
+    public static User of (ResultSet resultSet) throws SQLException {
+        User user = new User();
 
+        user.setId(resultSet.getInt("id"));
+        user.setFirstName(resultSet.getString("first_name"));
+        user.setLastName(resultSet.getString("last_name"));
+        user.setEmail(resultSet.getString("email"));
+        user.setPassword(resultSet.getString("password"));
+
+        return user;
+    }
     public int getId() {
         return id;
     }

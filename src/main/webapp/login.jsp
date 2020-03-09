@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>Sign In</title>
 </head>
 <body>
 
@@ -12,6 +12,7 @@
     <br>
     <input type="submit" value="Sign In">
 </form>
-
+<br>
+<a href="index.jsp" class="btn">Back to index page</a>
 </body>
 </html>

@@ -6,14 +6,22 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Welcome</title>
+    <title>Welcome page</title>
+    <style>
+       .btn {
+        display: inline-block;
+        background: #8C959D;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        border-radius: 3px;
+       }
+      </style>
 </head>
 <body>
 
-<form action="index" method="post">
-    <input type="submit" name="signUp" value="Sign Up">
-    <input type="submit" name="signIn" value="Sign In">
-</form>
+<a href="register.jsp" class="btn">Sign Up</a>
+<a href="login.jsp" class="btn">Sign In</a>
 
 </body>
 </html>

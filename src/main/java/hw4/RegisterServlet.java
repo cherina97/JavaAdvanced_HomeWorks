@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegisterServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("register.jsp").forward(req, resp);
@@ -17,18 +16,19 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
+
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
         UserDao userDao = new UserDao();
+
         try {
-            userDao.insert(firstName, lastName, email, password );
+            userDao.insert(firstName, lastName,  email, password);
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new RuntimeException("Can`t insert a user");
+            throw new RuntimeException("Can`t add user!");
         }
 
         req.setAttribute("userEmail", email);
