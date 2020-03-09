@@ -1,27 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Registration</title>
+    <title>Sign Up</title>
 </head>
 <body>
-<h1> Create new user </h1>
 
 <form action="register" method="post">
-
-    <label for="firstName">First Name :</label> <input name="firstName" type="text">
+    <label for="firstName">First name:</label> <input type="text" name="firstName">
     <br>
-    <label for="lastName">Last Name :</label> <input name="lastName" type="text">
+    <label for="lastName">Last name:</label> <input type="text" name="lastName">
     <br>
-    <label for="email">Email :</label> <input name="email" type="email">
+    <label for="email">Email:</label> <input type="email" name="email">
     <br>
-    <label for="password">Password : </label> <input name="password" type="password">
+    <label for="password">Password:</label> <input type="password" name="password">
     <br>
     <input type="submit" value="Sign Up">
 </form>
+<br>
+<a href="index.jsp" class="btn">Back to index page</a>
 </body>
 </html>

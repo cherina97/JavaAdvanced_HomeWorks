@@ -1,15 +1,13 @@
 package hw4;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.util.Optional;
 
 public class LoginServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("login.jsp").forward(req, resp);
@@ -22,23 +20,20 @@ public class LoginServlet extends HttpServlet {
 
         UserDao userDao = new UserDao();
 
-        User user = null;
-        try {
-            user = userDao.getUserByEmail(email);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if (user == null){
+        Optional <User> user = userDao.getUserByEmail(email);
+        if (!user.isPresent()){
             req.getRequestDispatcher("login.jsp").forward(req, resp);
             return;
         }
+        User user1 = user.get();
 
-        if (user.getPassword().equals(password)){
-            req.setAttribute("userEmail", email);
+        if (user1.getPassword().equals(password)){
+            req.setAttribute("firstName", user1.getFirstName());
+            req.setAttribute("lastName", user1.getLastName());
             req.getRequestDispatcher("cabinet.jsp").forward(req, resp);
         }
 
         req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 }
+
