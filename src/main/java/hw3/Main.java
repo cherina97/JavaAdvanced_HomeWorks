@@ -2,8 +2,6 @@ package hw3;
 
 import hw3.Dao.AuthorsDao;
 import hw3.Dao.BooksDao;
-import netscape.javascript.JSUtil;
-
 import java.sql.SQLException;
 import java.util.List;
 

@@ -14,14 +14,14 @@ public class SalaryTest {
     @Before
     public void beforeTest() {
         salary = new Salary(8, 40,
-                50, 0, 30,
+                15, 0, 30,
                 false, 26, 1000);
     }
 
-    @Test(expected = DaysException.class)
+    @Test
     public void itGetsSalary() throws DaysException {
         int realSalary = salary.getSalary();
-        int expectedSalary = 8090;
+        int expectedSalary = 4800;
 
         Assert.assertEquals(expectedSalary, realSalary);
     }
@@ -29,8 +29,7 @@ public class SalaryTest {
     @Test
     public void itAddsPremium(){
         int realSalary = salary.getPremium();
-        int expectedSalary = 9090;
-
+        int expectedSalary = 5800;
         Assert.assertEquals(expectedSalary, realSalary);
     }
 
@@ -45,11 +44,10 @@ public class SalaryTest {
     @Test
     public void itHospitalSalary() {
         int real = salary.getHospitalSalary();
-        int expected = 90;
+        int expected = 0;
 
         Assert.assertEquals(expected, real);
     }
-
 
     @After
     public void AfterTest() {
